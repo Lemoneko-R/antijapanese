@@ -18,7 +18,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
     if client.user != message.author:
-        if message.channel.id == "385030754188394499" || message.channel.id == "550280477295247362":
+        if message.channel.id == "550280477295247362":
             if is_japanese(message.content):
                 reply = f"{message.author.mention} ```Hey you! This message contains JAPANESE!! TakeCare.. \n おいお前! このメッセージには日本語が含まれてるぞ!! 気をつけろよ!!```" # 返信文の作成
                 await client.send_message(message.channel, reply)    
@@ -28,4 +28,4 @@ async def on_message(message):
         await client.send_message(message.channel, reply) 
 # botの接続と起動
 # （tokenにはbotアカウントのアクセストークンを入れてください）
-client.run('NTUwMjg3MTMyOTM4MzM4MzEx.D1gObg.tYJS4K8loLQdZjkC2fKNdZvUEmM')
+client.run('TOKEN HERE')

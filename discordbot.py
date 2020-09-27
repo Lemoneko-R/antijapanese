@@ -1,20 +1,24 @@
-import discord # インストールした discord.py
-import unicodedata
-client = discord.Client() # 接続に使用するオブジェクト
+import discord #Imports==
+import unicodedata #==
+
+#Set client
+client = discord.Client()
+
+#function
 def is_japanese(string):
-    for ch in string:
-        name = unicodedata.name(ch) 
-        if "CJK UNIFIED" in name \
-        or "HIRAGANA" in name \
-        or "KATAKANA" in name:
-            return True
-    return False
+    for ch in string: #loop strings
+        name = unicodedata.name(ch) #Str to Uni
+        if "CJK UNIFIED" in name \ #Kanji check
+        or "HIRAGANA" in name \ #Hiragana check
+        or "KATAKANA" in name: #Katakana check
+            return True #If include
+    return False #Not include
 # 起動時に通知してくれる処理
 @client.event
 async def on_ready():
     print('ログインしました')
 
-
+#Discord Message recieve event
 @client.event
 async def on_message(message):
     if client.user != message.author:

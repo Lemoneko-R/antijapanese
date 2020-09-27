@@ -22,7 +22,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
     if client.user != message.author:
-        if message.channel.id == "550280477295247362":
+        if message.channel.id == "550280477295247362": #Set channel ID
             if is_japanese(message.content):
                 reply = f"{message.author.mention} ```Hey you! This message contains JAPANESE!! TakeCare.. \n おいお前! このメッセージには日本語が含まれてるぞ!! 気をつけろよ!!```" # 返信文の作成
                 await client.send_message(message.channel, reply)    
